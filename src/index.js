@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Suspense, lazy } from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { Layout } from "./utility/context/Layout";
+import * as serviceWorker from "./serviceWorker";
+import { store } from "./redux/storeConfig/store";
+import Spinner from "./components/@vuexy/spinner/Fallback-spinner";
+import "./index.scss";
+import { IntlProviderWrapper } from "./utility/context/Internationalization";
+import { retry } from "./utility/retry";
 
+const LazyApp = lazy(() => retry(() => import("./App.jsx")));
+
+if (process.env.REACT_APP_ENV_MODE !== ("dev" || "demo")) {
+  // eslint-disable-next-line no-console
+  console.log = () => {};
+}
+// configureDatabase()
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <Suspense fallback={<Spinner />}>
+      <Layout>
+        <IntlProviderWrapper>
+          <LazyApp />
+        </IntlProviderWrapper>
+      </Layout>
+    </Suspense>
+  </Provider>,
+  document.getElementById("root"),
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+// serviceWorker.unregister();
+serviceWorker.register();

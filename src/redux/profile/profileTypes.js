@@ -1,0 +1,3 @@
+export const EDIT_PROFILE = "EDIT_PROFILE";
+export const VIEW_PROFILE = "VIEW_PROFILE";
+export const CHANGE_TIMEZONE = "CHANGE_TIMEZONE";

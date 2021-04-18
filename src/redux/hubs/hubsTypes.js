@@ -1,0 +1,17 @@
+export const ADD_SHIFT = "ADD_SHIFT";
+export const REMOVE_SHIFT = "REMOVE_SHIFT";
+export const GET_WEEK_DAYS = "GET_WEEK_DAYS";
+export const TOGGLE_24 = "TOGGLE_24";
+export const OPEN_DAY = "OPEN_DAY";
+export const SET_SHIFT_TIME_FROM = "SET_SHIFT_TIME_FROM";
+export const SET_SHIFT_TIME_TO = "SET_SHIFT_TIME_TO";
+export const GET_HUBS = "GET_HUBS";
+export const SELECT_HUB = "SELECT_HUB";
+export const COPY_TIMES_TO_ALL = "COPY_TIMES_TO_ALL";
+export const GET_CITY = "GET_CITY";
+export const CLEAR_HUB = "CLEAR_HUB";
+export const CLEAR_HUBS = "CLEAR_HUBS";
+export const VIEW_HUB = "VIEW_HUB";
+export const GET_COUNTRIES = "GET_COUNTRIES";
+export const GET_CITIES = "GET_CITIES";
+export const GET_HUBS_DDL = "GET_HUBS_DDL";

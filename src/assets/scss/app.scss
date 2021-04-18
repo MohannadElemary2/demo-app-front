@@ -1,0 +1,39 @@
+@import "./bootstrap.scss";
+@import "./components.scss";
+@import "./bootstrap-extended.scss";
+@import "./colors.scss";
+@import "./iconfont.scss";
+@import "./custom-rtl.scss";
+@import "./fonts.scss";
+
+// Global Styles
+.pointer {
+  cursor: pointer;
+}
+// bread crumb width
+.content-header {
+  width: 100%;
+}
+.barcodeStyle {
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    max-width: 280px;
+  }
+}
+.border-err {
+  border: 1px solid $red;
+  border-radius: 0.4rem;
+}
+
+.text-gray {
+  color: $gray-400;
+}
+.gfcMwa {
+  text-align: center !important;
+}
+
+u {
+  margin-right: 10px;
+}
